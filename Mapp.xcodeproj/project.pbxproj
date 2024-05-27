@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112C7BEA2C077E8900B134B3 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C7BE92C077E8800B134B3 /* PostView.swift */; };
+		112C7BEC2C0786EE00B134B3 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C7BEB2C0786EE00B134B3 /* NewPostView.swift */; };
+		112C7C082C10AE1200B134B3 /* MarkersStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112C7C072C10AE1200B134B3 /* MarkersStyle.swift */; };
 		1138A7502BFE36B600990E3E /* MappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1138A74F2BFE36B600990E3E /* MappApp.swift */; };
 		1138A7522BFE36B600990E3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1138A7512BFE36B600990E3E /* ContentView.swift */; };
 		1138A7542BFE36B800990E3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1138A7532BFE36B800990E3E /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112C7BE92C077E8800B134B3 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		112C7BEB2C0786EE00B134B3 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
+		112C7C072C10AE1200B134B3 /* MarkersStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkersStyle.swift; sourceTree = "<group>"; };
 		1138A74C2BFE36B600990E3E /* Mapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1138A74F2BFE36B600990E3E /* MappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappApp.swift; sourceTree = "<group>"; };
 		1138A7512BFE36B600990E3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +63,10 @@
 				11B1EE8B2C00D1B500C81D20 /* Info.plist */,
 				1138A74F2BFE36B600990E3E /* MappApp.swift */,
 				1138A7512BFE36B600990E3E /* ContentView.swift */,
+				112C7BEB2C0786EE00B134B3 /* NewPostView.swift */,
+				112C7BE92C077E8800B134B3 /* PostView.swift */,
 				1138A75F2BFE411700990E3E /* DataAndAuthoritations.swift */,
+				112C7C072C10AE1200B134B3 /* MarkersStyle.swift */,
 				1138A7532BFE36B800990E3E /* Assets.xcassets */,
 				1138A7552BFE36B800990E3E /* Preview Content */,
 			);
@@ -144,7 +153,10 @@
 			files = (
 				1138A7522BFE36B600990E3E /* ContentView.swift in Sources */,
 				1138A7602BFE411700990E3E /* DataAndAuthoritations.swift in Sources */,
+				112C7BEA2C077E8900B134B3 /* PostView.swift in Sources */,
 				1138A7502BFE36B600990E3E /* MappApp.swift in Sources */,
+				112C7BEC2C0786EE00B134B3 /* NewPostView.swift in Sources */,
+				112C7C082C10AE1200B134B3 /* MarkersStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

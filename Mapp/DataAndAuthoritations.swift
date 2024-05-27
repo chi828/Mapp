@@ -60,20 +60,30 @@ class LocationDataManager: NSObject, ObservableObject, CLLocationManagerDelegate
         guard let location = locations.last else {return}
         self.userLocation = location
     }
+    
+    func locationServicesAuthorized() -> Bool {
+        let authorization = locationManager.authorizationStatus
+        if authorization == .authorizedAlways || authorization == .authorizedWhenInUse {return true}
+        else {return false}
+    }
 }
 
 
 
 
 //Dati pizza 🍕
-class Location: ObservableObject, Identifiable, Decodable, Encodable {
+class Post: ObservableObject, Identifiable, Decodable, Encodable {
     var id = UUID()
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
+    var image: Data
+    var description: String
     
-    init(position: CLLocationCoordinate2D) {
+    init(position: CLLocationCoordinate2D, image: Data, description: String = "") {
         self.latitude = position.latitude
         self.longitude = position.longitude
+        self.image = image
+        self.description = description
     }
     
     func position() -> CLLocationCoordinate2D {
@@ -86,7 +96,7 @@ import SwiftUI
 
 class DataPersistence: ObservableObject {
     //The data
-    @Published var locations: [Location] = []
+    @Published var locations: [Post] = []
     
     //I'm assuming this function connects with the data
     private static func fileURL() throws -> URL {
@@ -100,10 +110,10 @@ class DataPersistence: ObservableObject {
     //This is to load data when the app starts running
     @MainActor
     func load() async throws {
-        let task = Task<[Location], Error> {
+        let task = Task<[Post], Error> {
             let fileURL = try Self.fileURL()
             guard let data = try? Data(contentsOf: fileURL) else { return [] }
-            let dailyThreads = try JSONDecoder().decode([Location].self, from: data)
+            let dailyThreads = try JSONDecoder().decode([Post].self, from: data)
             return dailyThreads
         }
         self.locations = try await task.value
@@ -111,7 +121,7 @@ class DataPersistence: ObservableObject {
     
     //This is to save data and it's called within another function which catches errors
     @MainActor
-    func save(scrums: [Location]) async throws {
+    func save(scrums: [Post]) async throws {
         let task = Task {
             let data = try JSONEncoder().encode(scrums)
             let outfile = try Self.fileURL()

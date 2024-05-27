@@ -16,7 +16,7 @@ struct MappApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(locations: $dataPersistence.locations) {
+            ContentView(posts: $dataPersistence.locations) {
                 Task {
                     do {
                         try await dataPersistence.save(scrums: dataPersistence.locations)
